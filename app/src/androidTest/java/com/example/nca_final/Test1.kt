@@ -12,6 +12,7 @@ import com.example.nca_final.ui.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.util.*
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
@@ -33,13 +34,12 @@ class Test1 {
 
     @Test
     fun test1_2() {
-        val name = "New pato"
+        val name = "Pato ${Date().time}"
         onView(withId(R.id.action_create)).perform(click())
         onView(withId(R.id.editTextName)).perform(typeText(name))
         closeSoftKeyboard()
         onView(withId(R.id.editTextSellValue)).perform(typeText("145"))
         closeSoftKeyboard()
         onView(withId(R.id.buttonCreateDuck)).perform(click())
-        onView(withText(name))
     }
 }

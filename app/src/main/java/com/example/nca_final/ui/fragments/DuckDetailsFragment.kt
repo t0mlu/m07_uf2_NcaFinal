@@ -66,7 +66,7 @@ class DuckDetailsFragment : Fragment() {
             binding.spinnerRarity.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, DuckRarity.values())
             binding.spinnerRarity.setSelection(duck.rarity!!)
 
-            binding.buttonCreateDuck.setOnClickListener {
+            binding.buttonUpdateDuck.setOnClickListener {
                 val name = binding.editTextName.text.toString()
                 val value = binding.editTextSellValue.text.toString().toDoubleOrNull()
                 val rarity = binding.spinnerRarity.selectedItemPosition
