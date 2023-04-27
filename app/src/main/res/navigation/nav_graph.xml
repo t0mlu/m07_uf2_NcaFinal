@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/DuckListFragment">
+
+    <fragment
+        android:id="@+id/DuckListFragment"
+        android:name="com.example.nca_final.ui.fragments.DuckListFragment"
+        android:label="My ducks"
+        tools:layout="@layout/fragment_duck_list" >
+        <action
+            android:id="@+id/action_DuckListFragment_to_DuckCreationFormFragment"
+            app:destination="@id/DuckCreationFormFragment" />
+        <action
+            android:id="@+id/action_DuckListFragment_to_DuckDetailsFragment"
+            app:destination="@id/DuckDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DuckCreationFormFragment"
+        android:name="com.example.nca_final.ui.fragments.DuckCreationFormFragment"
+        android:label="Register a new duck"
+        tools:layout="@layout/fragment_duck_creation_form" />
+
+    <fragment
+        android:id="@+id/DuckDetailsFragment"
+        android:name="com.example.nca_final.ui.fragments.DuckDetailsFragment"
+        android:label="Duck details"
+        tools:layout="@layout/fragment_duck_details" />
+</navigation>
