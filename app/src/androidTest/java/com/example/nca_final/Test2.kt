@@ -1,10 +1,10 @@
 package com.example.nca_final
 
+import android.content.pm.ActivityInfo
 import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
-import androidx.test.espresso.assertion.PositionAssertions.isCompletelyAbove
-import androidx.test.espresso.assertion.PositionAssertions.isCompletelyBelow
+import androidx.test.espresso.assertion.PositionAssertions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -59,5 +59,15 @@ class Test2 {
         onView(withId(R.id.editTextSellValue)).check(isCompletelyAbove(withId(R.id.spinnerRarity)))
         onView(withId(R.id.spinnerRarity)).check(isCompletelyAbove(withId(R.id.buttonUpdateDuck)))
         onView(withId(R.id.buttonUpdateDuck)).check(isCompletelyBelow(withId(R.id.spinnerRarity)))
+
+
+        // Alguns checks adicionals per al mode landscape
+
+        activityRule.scenario.onActivity { activity ->
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        }
+
+        onView(withId(R.id.imageViewDuck)).check(isCompletelyLeftOf(withId(R.id.editTextName)))
+        onView(withId(R.id.textViewUrl)).check(isCompletelyBelow(withId(R.id.spinnerRarity)))
     }
 }
