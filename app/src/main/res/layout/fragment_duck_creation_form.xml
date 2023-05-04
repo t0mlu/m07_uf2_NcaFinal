@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayoutDuckCreationForm"
@@ -14,22 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="Name..."
-        app:layout_constraintBottom_toTopOf="@+id/editTextSellValue"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerRarity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSellValue" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextSellValue"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="Value..."
-        app:layout_constraintBottom_toTopOf="@+id/spinnerRarity"
+        app:layout_constraintBottom_toTopOf="@+id/editTextName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerRarity"
@@ -39,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSellValue" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <Button
         android:id="@+id/buttonCreateDuck"
