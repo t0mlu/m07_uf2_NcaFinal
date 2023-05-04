@@ -23,11 +23,21 @@ class Test2 {
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
+    // Aquest test falla després de la modificació demanada al punt 5 de l'enunciat
     @Test
     fun test2_1() {
         onView(withId(R.id.action_create)).perform(click())
         onView(withId(R.id.editTextName)).check(isCompletelyAbove(withId(R.id.editTextSellValue)))
         onView(withId(R.id.editTextSellValue)).check(isCompletelyAbove(withId(R.id.spinnerRarity)))
+        onView(withId(R.id.buttonCreateDuck)).check(isCompletelyBelow(withId(R.id.spinnerRarity)))
+    }
+
+    // Aquest és el nou test que funcional
+    @Test
+    fun test2_1_1() {
+        onView(withId(R.id.action_create)).perform(click())
+        onView(withId(R.id.editTextName)).check(isCompletelyBelow(withId(R.id.editTextSellValue)))
+        onView(withId(R.id.editTextName)).check(isCompletelyAbove(withId(R.id.spinnerRarity)))
         onView(withId(R.id.buttonCreateDuck)).check(isCompletelyBelow(withId(R.id.spinnerRarity)))
     }
 
